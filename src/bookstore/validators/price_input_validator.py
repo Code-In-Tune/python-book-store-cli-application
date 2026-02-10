@@ -1,6 +1,6 @@
 import re
 
-from bookstore.exception.ValidationError import ValidationError
+from bookstore.exception.validation_error import ValidationError
 from bookstore.utils.input.input_validators_constants import PRICE_PATTERN
 from bookstore.validators.field.input_field import InputField
 from bookstore.validators.validator import Validator

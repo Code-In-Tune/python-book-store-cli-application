@@ -2,5 +2,5 @@ import dataclasses
 
 
 @dataclasses.dataclass(frozen=True)
-class GetBooksByAuthorRequestDto:
+class GetBooksByTitleRequestDto:
     title : str

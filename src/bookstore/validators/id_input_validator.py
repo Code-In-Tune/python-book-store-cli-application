@@ -1,4 +1,4 @@
-from bookstore.exception.ValidationError import ValidationError
+from bookstore.exception.validation_error import ValidationError
 from bookstore.validators.field.input_field import InputField
 from bookstore.validators.validator import Validator
 
