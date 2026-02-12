@@ -1,0 +1,7 @@
+TITLE_FIELD = "title"
+AUTHOR_FIELD = "author"
+ISBN_FIELD = "isbn"
+QUANTITY_FIELD = "quantity"
+PRICE_FIELD = "price"
+PUBLISHER_FIELD = "publisher"
+ID_FIELD = "id"

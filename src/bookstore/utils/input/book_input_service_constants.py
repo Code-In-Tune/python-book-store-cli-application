@@ -1,0 +1,7 @@
+INSERT_BOOK_TITLE_MESSAGE = "Insert book title:"
+INSERT_BOOK_AUTHOR_MESSAGE = "Insert book author:"
+INSERT_BOOK_ISBN_MESSAGE = "Insert book ISBN:"
+INSERT_BOOK_QUANTITY_MESSAGE = "Insert book quantity:"
+INSERT_BOOK_PRICE_MESSAGE = "Insert book price:"
+INSERT_BOOK_PUBLISHER_MESSAGE = "Insert book publisher:"
+INSERT_BOOK_ID_MESSAGE = "Insert book id:"
