@@ -1,11 +1,13 @@
 from bookstore.dto.book.add_book_request_dto import AddBookRequestDTO
+from bookstore.dto.book.get_book_by_id_request_dto import GetBookByIdRequestDTO
 from bookstore.printer.book_store_printer import BookStorePrinter
 from bookstore.reader.book_store_input_reader import BookStoreInputReader
 from bookstore.service.book_input_service import BookInputService
 from bookstore.utils.input.book_input_service_constants import INSERT_BOOK_TITLE_MESSAGE, INSERT_BOOK_AUTHOR_MESSAGE, \
-    INSERT_BOOK_ISBN_MESSAGE, INSERT_BOOK_QUANTITY_MESSAGE, INSERT_BOOK_PRICE_MESSAGE, INSERT_BOOK_PUBLISHER_MESSAGE
+    INSERT_BOOK_ISBN_MESSAGE, INSERT_BOOK_QUANTITY_MESSAGE, INSERT_BOOK_PRICE_MESSAGE, INSERT_BOOK_PUBLISHER_MESSAGE, \
+    INSERT_BOOK_ID_MESSAGE
 from bookstore.utils.input.input_field_constants import TITLE_FIELD, AUTHOR_FIELD, ISBN_FIELD, QUANTITY_FIELD, \
-    PRICE_FIELD, PUBLISHER_FIELD
+    PRICE_FIELD, PUBLISHER_FIELD, ID_FIELD
 from bookstore.validators.field.input_field import InputField
 from bookstore.validators.validator import Validator
 
@@ -91,4 +93,18 @@ class ConsoleBookInputService(BookInputService):
             quantity= quantity,
             price= price,
             publisher= publisher,
+        )
+
+    def build_get_book_by_id_request_dto(self) -> GetBookByIdRequestDTO:
+        self.book_store_printer.print(INSERT_BOOK_ID_MESSAGE)
+        self.book_store_printer.print_quit_option()
+
+        id : str = self.book_input_reader.read_next_line_with_quit_option()
+
+        input_id : InputField = InputField(field=ID_FIELD, value=id)
+
+        self.input_id_validator.validate(input_id)
+
+        return GetBookByIdRequestDTO(
+            book_id= id
         )
